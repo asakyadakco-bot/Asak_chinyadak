@@ -16,13 +16,11 @@
       min-height: 100vh;
       font-family: Tahoma, Arial, sans-serif;
 
-      /* =========================
-         بک گراند لوگوی شرکت
-         ========================= */
+      /* بک‌گراند */
       background-image:
         linear-gradient(
-          rgba(15, 20, 25, 0.35),
-          rgba(15, 20, 25, 0.35)
+          rgba(20, 25, 30, 0.30),
+          rgba(20, 25, 30, 0.30)
         ),
         url("asak.png.jpg");
 
@@ -35,15 +33,12 @@
       justify-content: center;
       align-items: center;
 
-      padding: 18px;
+      padding: 15px;
 
       color: white;
     }
 
-    /* =========================
-       کارت اصلی شیشه‌ای
-       ========================= */
-
+    /* کارت شیشه‌ای اصلی */
     .card {
       width: 100%;
       max-width: 440px;
@@ -66,26 +61,21 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.40);
     }
 
-    /* =========================
-       لوگوی کامل شرکت
-       ========================= */
+    /* =================================
+       لوگوی واقعی شرکت
+       ================================= */
 
     .logo {
-      width: 105px;
-      height: 105px;
+      display: block;
+
+      width: 110px;
+      height: 110px;
 
       margin: 0 auto 17px;
 
-      background-color: white;
+      object-fit: contain;
 
-      background-image: url("asak.png.jpg");
-
-      /*
-        کل لوگوی شرکت داخل کادر دیده می‌شود
-      */
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
+      background: white;
 
       border-radius: 50%;
 
@@ -96,10 +86,7 @@
         0 0 0 5px rgba(255, 255, 255, 0.12);
     }
 
-    /* =========================
-       عنوان
-       ========================= */
-
+    /* عنوان */
     h1 {
       margin: 0;
 
@@ -119,15 +106,9 @@
       line-height: 1.8;
 
       color: rgba(255, 255, 255, 0.88);
-
-      text-shadow:
-        0 1px 7px rgba(0, 0, 0, 0.25);
     }
 
-    /* =========================
-       دکمه‌های شیشه‌ای
-       ========================= */
-
+    /* دکمه‌ها */
     .btn {
       display: flex;
       align-items: center;
@@ -174,10 +155,7 @@
       transform: scale(0.98);
     }
 
-    /* =========================
-       آیکون‌ها
-       ========================= */
-
+    /* آیکون‌ها */
     .icon {
       width: 50px;
       height: 50px;
@@ -220,10 +198,7 @@
       background: rgba(40, 130, 80, 0.78);
     }
 
-    /* =========================
-       متن دکمه
-       ========================= */
-
+    /* متن */
     .text {
       flex: 1;
       text-align: right;
@@ -243,10 +218,7 @@
       color: rgba(255, 255, 255, 0.76);
     }
 
-    /* =========================
-       فلش
-       ========================= */
-
+    /* فلش */
     .arrow {
       font-size: 25px;
       color: rgba(255, 255, 255, 0.75);
@@ -259,10 +231,7 @@
       color: white;
     }
 
-    /* =========================
-       فوتر
-       ========================= */
-
+    /* فوتر */
     footer {
       margin-top: 21px;
 
@@ -271,10 +240,7 @@
       color: rgba(255, 255, 255, 0.65);
     }
 
-    /* =========================
-       موبایل
-       ========================= */
-
+    /* موبایل */
     @media (max-width: 480px) {
 
       body {
@@ -282,13 +248,13 @@
       }
 
       .card {
-        padding: 26px 16px 21px;
+        padding: 25px 16px 21px;
         border-radius: 29px;
       }
 
       .logo {
-        width: 100px;
-        height: 100px;
+        width: 105px;
+        height: 105px;
       }
 
       h1 {
@@ -315,10 +281,13 @@
 
   <main class="card">
 
-    <!-- لوگوی کامل شرکت -->
-    <div class="logo"></div>
+    <!-- لوگوی واقعی شرکت -->
+    <img
+      class="logo"
+      src="asak.png.jpg"
+      alt="لوگوی آساک چین یدک"
+    >
 
-    <!-- عنوان -->
     <h1>
       آساک چین یدک
     </h1>
