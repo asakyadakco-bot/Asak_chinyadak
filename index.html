@@ -3,76 +3,428 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>آساک چین یدک | ارتباط با ما</title>
+
   <style>
-    *{box-sizing:border-box}
-    body{
-      margin:0; min-height:100vh; font-family:Tahoma,Arial,sans-serif;
-      background:linear-gradient(145deg,#f4f7f5,#e8f0eb);
-      display:flex; justify-content:center; align-items:center; padding:24px;
-      color:#17231c;
+    * {
+      box-sizing: border-box;
     }
-    .card{
-      width:100%; max-width:430px; background:#fff; border-radius:28px;
-      padding:30px 22px 24px; text-align:center;
-      box-shadow:0 18px 50px rgba(0,0,0,.10);
+
+    html {
+      scroll-behavior: smooth;
     }
-    .logo{
-      width:82px;height:82px;border-radius:22px;margin:0 auto 16px;
-      display:flex;align-items:center;justify-content:center;
-      background:#168447;color:white;font-size:28px;font-weight:bold;
-      box-shadow:0 10px 24px rgba(22,132,71,.25);
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+
+      font-family: Tahoma, Arial, sans-serif;
+
+      /* بک‌گراند اصلی */
+      background:
+        linear-gradient(
+          135deg,
+          rgba(0, 0, 0, 0.38),
+          rgba(0, 40, 20, 0.20)
+        ),
+        url("asak.png.jpg");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 24px;
+
+      color: #17231c;
+
+      position: relative;
+      overflow-x: hidden;
     }
-    h1{margin:0;font-size:24px}
-    .subtitle{margin:9px 0 24px;color:#68736c;font-size:14px}
-    .btn{
-      display:flex; align-items:center; gap:14px; text-decoration:none;
-      color:#17231c; background:#f6f8f7; border:1px solid #e7ebe8;
-      border-radius:18px; padding:15px 16px; margin:12px 0;
-      transition:.2s; text-align:right;
+
+    /* نورهای محو تزئینی */
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      width: 260px;
+      height: 260px;
+
+      border-radius: 50%;
+
+      filter: blur(90px);
+
+      pointer-events: none;
+      z-index: 0;
     }
-    .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.07)}
-    .icon{
-      width:46px;height:46px;border-radius:14px;display:flex;
-      align-items:center;justify-content:center;font-size:23px;flex:none;
+
+    body::before {
+      background: rgba(30, 180, 100, 0.22);
+      top: -80px;
+      left: -80px;
     }
-    .wa{background:#dff7e8}.ig{background:#f8e6ef}.bale{background:#e1efff}.web{background:#e8eee9}
-    .text{flex:1}.title{font-weight:bold;font-size:16px}.desc{font-size:12px;color:#778078;margin-top:4px}
-    .arrow{font-size:20px;color:#9aa39d}
-    footer{font-size:11px;color:#9aa39d;margin-top:20px}
+
+    body::after {
+      background: rgba(255, 255, 255, 0.15);
+      bottom: -100px;
+      right: -80px;
+    }
+
+    /* کادر اصلی شیشه‌ای */
+    .card {
+      position: relative;
+      z-index: 1;
+
+      width: 100%;
+      max-width: 430px;
+
+      padding: 32px 22px 25px;
+
+      text-align: center;
+
+      /* Glassmorphism */
+      background: rgba(255, 255, 255, 0.17);
+
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+
+      border: 1px solid rgba(255, 255, 255, 0.38);
+
+      border-radius: 30px;
+
+      box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+
+      overflow: hidden;
+    }
+
+    /* خط نور بالای کارت */
+    .card::before {
+      content: "";
+
+      position: absolute;
+      top: 0;
+      left: 12%;
+      right: 12%;
+
+      height: 1px;
+
+      background: rgba(255, 255, 255, 0.65);
+
+      filter: blur(.3px);
+    }
+
+    /* لوگو */
+    .logo {
+      width: 86px;
+      height: 86px;
+
+      margin: 0 auto 17px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 24px;
+
+      background: rgba(22, 132, 71, 0.86);
+
+      color: white;
+
+      font-size: 28px;
+      font-weight: bold;
+
+      border: 1px solid rgba(255, 255, 255, 0.35);
+
+      box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    }
+
+    h1 {
+      margin: 0;
+
+      font-size: 24px;
+
+      color: #ffffff;
+
+      text-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .subtitle {
+      margin: 10px 0 25px;
+
+      color: rgba(255, 255, 255, 0.82);
+
+      font-size: 13px;
+
+      line-height: 1.8;
+    }
+
+    /* دکمه‌های منو */
+    .btn {
+      position: relative;
+
+      display: flex;
+      align-items: center;
+
+      gap: 14px;
+
+      width: 100%;
+
+      padding: 14px 15px;
+
+      margin: 12px 0;
+
+      text-decoration: none;
+
+      color: white;
+
+      /* شیشه‌ای */
+      background: rgba(255, 255, 255, 0.20);
+
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+
+      border: 1px solid rgba(255, 255, 255, 0.32);
+
+      border-radius: 19px;
+
+      box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+
+      transition:
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px) scale(1.01);
+
+      background: rgba(255, 255, 255, 0.32);
+
+      box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.30);
+    }
+
+    .btn:active {
+      transform: scale(.98);
+    }
+
+    /* آیکون‌ها */
+    .icon {
+      width: 48px;
+      height: 48px;
+
+      flex: none;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 15px;
+
+      font-size: 22px;
+
+      border: 1px solid rgba(255, 255, 255, 0.30);
+
+      box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    }
+
+    .wa {
+      background: rgba(37, 211, 102, 0.72);
+    }
+
+    .ig {
+      background: linear-gradient(
+        135deg,
+        rgba(131, 58, 180, .75),
+        rgba(225, 48, 108, .75),
+        rgba(253, 29, 29, .70)
+      );
+    }
+
+    .bale {
+      background: rgba(40, 135, 230, 0.72);
+    }
+
+    .web {
+      background: rgba(40, 120, 75, 0.72);
+    }
+
+    .text {
+      flex: 1;
+
+      text-align: right;
+    }
+
+    .title {
+      font-weight: bold;
+
+      font-size: 16px;
+
+      color: #ffffff;
+    }
+
+    .desc {
+      margin-top: 4px;
+
+      font-size: 11px;
+
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .arrow {
+      font-size: 24px;
+
+      color: rgba(255, 255, 255, 0.65);
+
+      transition: .25s;
+    }
+
+    .btn:hover .arrow {
+      transform: translateX(-4px);
+
+      color: white;
+    }
+
+    footer {
+      margin-top: 21px;
+
+      font-size: 10px;
+
+      color: rgba(255, 255, 255, 0.60);
+    }
+
+    /* تنظیمات موبایل */
+    @media (max-width: 480px) {
+
+      body {
+        padding: 15px;
+      }
+
+      .card {
+        padding: 27px 17px 22px;
+
+        border-radius: 27px;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+
+      .subtitle {
+        font-size: 12px;
+      }
+
+      .btn {
+        padding: 13px;
+      }
+    }
   </style>
 </head>
+
 <body>
+
   <main class="card">
-    <div class="logo">آساک</div>
-    <h1>آساک چین یدک</h1>
-    <div class="subtitle">برای ارتباط و دریافت خدمات، گزینه موردنظر را انتخاب کنید</div>
 
-    <a class="btn" href="https://wa.me/989916181912" target="_blank" rel="noopener">
+    <div class="logo">
+      آساک
+    </div>
+
+    <h1>
+      آساک چین یدک
+    </h1>
+
+    <div class="subtitle">
+      برای ارتباط و دریافت خدمات، گزینه موردنظر را انتخاب کنید
+    </div>
+
+    <!-- واتساپ -->
+    <a
+      class="btn"
+      href="https://wa.me/989916181912"
+      target="_blank"
+      rel="noopener"
+    >
       <div class="icon wa">📞</div>
-      <div class="text"><div class="title">واتساپ</div><div class="desc">09916181912</div></div>
+
+      <div class="text">
+        <div class="title">واتساپ</div>
+        <div class="desc">09916181912</div>
+      </div>
+
       <div class="arrow">‹</div>
     </a>
 
-    <a class="btn" href="https://instagram.com/asakchinyadak.ir" target="_blank" rel="noopener">
+    <!-- اینستاگرام -->
+    <a
+      class="btn"
+      href="https://instagram.com/asakchinyadak.ir"
+      target="_blank"
+      rel="noopener"
+    >
       <div class="icon ig">📸</div>
-      <div class="text"><div class="title">اینستاگرام</div><div class="desc">asakchinyadak.ir</div></div>
+
+      <div class="text">
+        <div class="title">اینستاگرام</div>
+        <div class="desc">asakchinyadak.ir</div>
+      </div>
+
       <div class="arrow">‹</div>
     </a>
 
-    <a class="btn" href="https://ble.ir/Asak_chinyadak" target="_blank" rel="noopener">
+    <!-- بله -->
+    <a
+      class="btn"
+      href="https://ble.ir/Asak_chinyadak"
+      target="_blank"
+      rel="noopener"
+    >
       <div class="icon bale">📱</div>
-      <div class="text"><div class="title">بله</div><div class="desc">@Asak_chinyadak</div></div>
+
+      <div class="text">
+        <div class="title">بله</div>
+        <div class="desc">@Asak_chinyadak</div>
+      </div>
+
       <div class="arrow">‹</div>
     </a>
 
-    <a class="btn" href="https://asakchinyadak.com" target="_blank" rel="noopener">
+    <!-- سایت -->
+    <a
+      class="btn"
+      href="https://asakchinyadak.com"
+      target="_blank"
+      rel="noopener"
+    >
       <div class="icon web">🌐</div>
-      <div class="text"><div class="title">سایت</div><div class="desc">asakchinyadak.com</div></div>
+
+      <div class="text">
+        <div class="title">سایت</div>
+        <div class="desc">asakchinyadak.com</div>
+      </div>
+
       <div class="arrow">‹</div>
     </a>
 
-    <footer>آساک چین یدک</footer>
+    <footer>
+      آساک چین یدک
+    </footer>
+
   </main>
+
 </body>
 </html>
