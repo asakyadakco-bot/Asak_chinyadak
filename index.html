@@ -16,7 +16,6 @@
       min-height: 100vh;
       font-family: Tahoma, Arial, sans-serif;
 
-      /* بک‌گراند */
       background-image:
         linear-gradient(
           rgba(20, 25, 30, 0.30),
@@ -38,7 +37,6 @@
       color: white;
     }
 
-    /* کارت شیشه‌ای اصلی */
     .card {
       width: 100%;
       max-width: 440px;
@@ -61,10 +59,6 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.40);
     }
 
-    /* =================================
-       لوگوی واقعی شرکت
-       ================================= */
-
     .logo {
       display: block;
 
@@ -86,7 +80,6 @@
         0 0 0 5px rgba(255, 255, 255, 0.12);
     }
 
-    /* عنوان */
     h1 {
       margin: 0;
 
@@ -108,7 +101,6 @@
       color: rgba(255, 255, 255, 0.88);
     }
 
-    /* دکمه‌ها */
     .btn {
       display: flex;
       align-items: center;
@@ -155,7 +147,6 @@
       transform: scale(0.98);
     }
 
-    /* آیکون‌ها */
     .icon {
       width: 50px;
       height: 50px;
@@ -198,7 +189,6 @@
       background: rgba(40, 130, 80, 0.78);
     }
 
-    /* متن */
     .text {
       flex: 1;
       text-align: right;
@@ -218,7 +208,6 @@
       color: rgba(255, 255, 255, 0.76);
     }
 
-    /* فلش */
     .arrow {
       font-size: 25px;
       color: rgba(255, 255, 255, 0.75);
@@ -229,6 +218,48 @@
     .btn:hover .arrow {
       transform: translateX(-5px);
       color: white;
+    }
+
+    /* بله - دو گزینه داخل یک کادر */
+    .bale-container {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      cursor: default;
+    }
+
+    .bale-option {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      cursor: pointer;
+    }
+
+    .bale-option .icon {
+      width: 45px;
+      height: 45px;
+      font-size: 21px;
+    }
+
+    .bale-option .text {
+      min-width: 0;
+    }
+
+    .bale-option .desc {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      direction: ltr;
+      text-align: right;
+    }
+
+    .bale-divider {
+      width: 1px;
+      min-height: 45px;
+      margin: 0 12px;
+      background: rgba(255, 255, 255, 0.25);
     }
 
     /* فوتر */
@@ -273,6 +304,20 @@
         width: 48px;
         height: 48px;
       }
+
+      .bale-option {
+        gap: 7px;
+      }
+
+      .bale-option .icon {
+        width: 42px;
+        height: 42px;
+        font-size: 19px;
+      }
+
+      .bale-divider {
+        margin: 0 8px;
+      }
     }
   </style>
 </head>
@@ -296,7 +341,6 @@
       برای ارتباط و دریافت خدمات، گزینه موردنظر را انتخاب کنید
     </div>
 
-
     <!-- واتساپ -->
     <a
       class="btn"
@@ -313,7 +357,6 @@
 
       <div class="arrow">‹</div>
     </a>
-
 
     <!-- اینستاگرام -->
     <a
@@ -332,25 +375,6 @@
       <div class="arrow">‹</div>
     </a>
 
-
-    <!-- بله -->
-    <a
-      class="btn"
-      href="https://ble.ir/Asak_chinyadak"
-      target="_blank"
-      rel="noopener"
-    >
-      <div class="icon bale">📱</div>
-
-      <div class="text">
-        <div class="title">بله</div>
-        <div class="desc">@Asak_chinyadak</div>
-      </div>
-
-      <div class="arrow">‹</div>
-    </a>
-
-
     <!-- سایت -->
     <a
       class="btn"
@@ -367,7 +391,39 @@
 
       <div class="arrow">‹</div>
     </a>
+    
+    <!-- بله - دو اکانت -->
+    <div class="btn bale-container">
 
+      <!-- بله اول -->
+      <div
+        class="bale-option"
+        onclick="window.open('https://ble.ir/09911004749', '_blank')"
+      >
+        <div class="icon bale">📱</div>
+
+        <div class="text">
+          <div class="title">فروشگاه</div>
+          <div class="desc">@09911004749</div>
+        </div>
+      </div>
+
+      <div class="bale-divider"></div>
+
+      <!-- بله دوم -->
+      <div
+        class="bale-option"
+        onclick="window.open('https://ble.ir/asakyadak', '_blank')"
+      >
+        <div class="icon bale">📱</div>
+
+        <div class="text">
+          <div class="title">آساک چین</div>
+          <div class="desc">@asakyadak</div>
+        </div>
+      </div>
+
+    </div>
 
     <footer>
       آساک چین یدک
